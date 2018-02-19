@@ -46,8 +46,8 @@ SOFTWARE.
 #include <juce_core/juce_core.h>
 
 /** 
- * If this logger is set active, all Logger::writeToLog or 
- * DBG calls will result in an output to the OS X log. 
+ * If this logger is set active, all Logger::writeToLog 
+ * calls will result in an output to the OS X log. 
  */
 class MacSystemConsoleLogger : public juce::Logger {
 
