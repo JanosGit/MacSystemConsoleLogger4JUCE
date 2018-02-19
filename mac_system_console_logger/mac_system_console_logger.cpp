@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#import "janos_mac_system_console_logger.h"
+#include "mac_system_console_logger.h"
 
 /** Just a fallback if this is included on non-apple systems. */
 void MacSystemConsoleLogger::logMessage(const juce::String &message) {

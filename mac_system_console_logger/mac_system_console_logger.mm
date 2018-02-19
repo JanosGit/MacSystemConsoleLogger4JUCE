@@ -23,7 +23,7 @@ SOFTWARE.
 */
 
 #import <Foundation/Foundation.h>
-#import "janos_mac_system_console_logger.h"
+#import "mac_system_console_logger.h"
 
 void MacSystemConsoleLogger::logMessage(const juce::String &message) {
 
