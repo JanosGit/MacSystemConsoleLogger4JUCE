@@ -24,8 +24,25 @@ SOFTWARE.
 
 #include "mac_system_console_logger.h"
 
+#if defined(JUCE_MAC) || defined(JUCE_IOS)
+#import <Foundation/Foundation.h>
+
+void MacSystemConsoleLogger::logMessage(const juce::String &message) {
+    
+    // it's that easy... ;)
+    NSLog (@"%@", (NSString*)message.toCFString());
+}
+#else
+
 /** Just a fallback if this is included on non-apple systems. */
 void MacSystemConsoleLogger::logMessage(const juce::String &message) {
 
     std::cerr << message.toStdString() << std::endl;
+}
+#endif
+
+MacSystemConsoleLogger::~MacSystemConsoleLogger() {
+    if (Logger::getCurrentLogger() == this) {
+        Logger::setCurrentLogger (nullptr);
+    }
 }

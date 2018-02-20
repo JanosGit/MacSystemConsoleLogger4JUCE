@@ -50,6 +50,14 @@ SOFTWARE.
  * calls will result in an output to the OS X log. 
  */
 class MacSystemConsoleLogger : public juce::Logger {
+    
+public:
+    
+    /**
+     * The destructor will automatically reset the current logger to default if
+     * this one is still assigned as the current logger.
+     */
+    ~MacSystemConsoleLogger();
 
     void logMessage (const juce::String &message) override;
 };
