@@ -22,11 +22,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-#import <Foundation/Foundation.h>
-#import "mac_system_console_logger.h"
-
-void MacSystemConsoleLogger::logMessage(const juce::String &message) {
-
-    // it's that easy... ;)
-    NSLog (@"%@", (NSString*)message.toCFString());
-}
+#include "mac_system_console_logger.cpp"
