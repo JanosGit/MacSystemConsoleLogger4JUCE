@@ -30,7 +30,9 @@ SOFTWARE.
 void MacSystemConsoleLogger::logMessage(const juce::String &message) {
     
     // it's that easy... ;)
-    NSLog (@"%@", (NSString*)message.toCFString());
+    CFStringRef messageCFString = message.toCFString();
+    NSLog (@"%@", (NSString*)messageCFString);
+    CFRelease (messageCFString);
 }
 #else
 
