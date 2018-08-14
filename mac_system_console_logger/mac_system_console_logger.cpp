@@ -39,7 +39,7 @@ void MacSystemConsoleLogger::logMessage(const juce::String &message) {
 /** Just a fallback if this is included on non-apple systems. */
 void MacSystemConsoleLogger::logMessage(const juce::String &message) {
 
-    std::cerr << message.toStdString() << std::endl;
+    std::cerr << message << std::endl;
 }
 #endif
 
